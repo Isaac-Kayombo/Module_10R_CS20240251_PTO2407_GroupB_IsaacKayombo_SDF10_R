@@ -6,13 +6,18 @@ const appSettings = {
     databaseURL: "https://playground-526cb-default-rtdb.europe-west1.firebasedatabase.app/"
 }
 
-// VARIABLE SECTION
+
+
+
+// VARIABLE SECTION //
 const app = initializeApp(appSettings)
 const database = getDatabase(app)
 const shoppingListInDB = ref(database, "shoppingList")
 const inputFieldEl = document.getElementById("input-field")
 const addButtonEl = document.getElementById("add-button")
 const shoppingListEl = document.getElementById("shopping-list")
+//-- END OF VARIABLE SECTION --//
+
 
 
 //EVENTLISTENER SECTION
@@ -24,10 +29,10 @@ addButtonEl.addEventListener("click", function() {
     clearInputFieldEl()
     
 })
+////
 
 
-// FUNCTION SECTION
-
+//-- FUNCTION SECTION --//
 onValue(shoppingListInDB, function(snapshot) {
 
     if (snapshot.exists()) {
@@ -46,10 +51,6 @@ onValue(shoppingListInDB, function(snapshot) {
     } else {
         shoppingListEl.innerHTML = "No items added to cart."
     }
-
-
-    
-
 })
 
 function clearShoppingListEl() {
@@ -61,7 +62,6 @@ function clearInputFieldEl() {
 }
 
 function appendItemToShoppingListEl(item) {
-    //shoppingListEl.innerHTML += `<li>${itemValue}</li>`
     let itemID = item[0]
     let itemValue = item[1]
     let newEl = document.createElement("li")
@@ -75,3 +75,4 @@ function appendItemToShoppingListEl(item) {
 
     shoppingListEl.append(newEl)
 }
+// -- END OF FUNCTION SECTION -- //

@@ -1,3 +1,5 @@
+/*---ALL MOBILE APP STYLES---*/
+
 html, body {
     margin: 0;
     padding: 0;
@@ -72,3 +74,5 @@ ul li:hover {
     background-color: #5656a6;
     cursor: pointer;
 }
+
+/*---END OF MOBILE APP STYLES---*/
